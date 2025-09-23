@@ -1,4 +1,24 @@
 
+const numbers = document.querySelector(".numbers");
+const operations = document.querySelector(".operations");
+const field = document.querySelector("#field");
+numbers.addEventListener("click", (event) => {
+    let target = event.target;
+    if (target.tagName === "BUTTON") {
+        field.value = target.textContent;
+    }
+
+
+})
+
+operations.addEventListener("click", (event) => {
+    let target = event.target;
+    if (target.tagName === "BUTTON") {
+        field.value = target.textContent;
+    }
+
+
+})
 
 
 
