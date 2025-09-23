@@ -20,6 +20,23 @@ operations.addEventListener("click", (event) => {
 
 })
 
+function operate(operator, number1, number2) {
+    let result = 0;
+    switch (operator) {
+        case '+':
+            result = add(number1, number2);
+        case '-':
+            result = subtract(number1, number2);
+        case '*':
+            result = multiply(number1, number2);
+        case '/':
+            result = divide(number1, number2);
+    }
+
+    return result;
+
+}
+
 
 
 
