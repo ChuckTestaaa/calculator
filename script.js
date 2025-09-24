@@ -34,12 +34,16 @@ function operate(operator, number1, number2) {
     switch (operator) {
         case '+':
             result = add(number1, number2);
+            break;
         case '-':
             result = subtract(number1, number2);
+            break;
         case '*':
             result = multiply(number1, number2);
+            break;
         case '/':
             result = divide(number1, number2);
+            break;
     }
 
     return result;
