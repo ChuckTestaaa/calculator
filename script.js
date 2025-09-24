@@ -2,6 +2,7 @@
 let firstNumber = 0;
 let secondNumber = 0;
 let operator = '';
+let justCalculated = false;
 const numbers = document.querySelector(".numbers");
 const operations = document.querySelector(".operations");
 const field = document.querySelector("#field");
@@ -51,6 +52,15 @@ function operate(operator, number1, number2) {
 }
 
 function fieldParser(value) {
+    // If we just calculated and a number is pressed, start fresh
+    if (justCalculated && !isNaN(Number(value))) {
+        firstNumber = Number(value);
+        secondNumber = 0;
+        operator = '';
+        justCalculated = false;
+        return;
+    }
+
     if (firstNumber === 0 && secondNumber === 0 && operator === '') {
         firstNumber = Number(value);
     } else if (firstNumber != 0 && secondNumber === 0 && operator === '') {
@@ -73,6 +83,7 @@ function evaluate() {
         firstNumber = Number(field.value);
         secondNumber = 0;
         operator = '';
+        justCalculated = true;
     }
 
 }
