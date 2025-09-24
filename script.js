@@ -66,8 +66,13 @@ function fieldParser(value) {
 }
 
 function evaluate() {
-    if (!firstNumber === 0 && secondNumber === 0 && operator === '') {
+    if (firstNumber !== 0 && secondNumber !== 0 && operator !== '') {
         field.value = operate(operator, firstNumber, secondNumber);
+
+        //Reset for next calculation
+        firstNumber = Number(field.value);
+        secondNumber = 0;
+        operator = '';
     }
 
 }
